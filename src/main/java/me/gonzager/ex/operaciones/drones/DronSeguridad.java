@@ -1,5 +1,18 @@
 package me.gonzager.ex.operaciones.drones;
 
-public class DronSeguridad {
+public class DronSeguridad extends Dron{
 
+    public DronSeguridad(Double autonomia, Integer procesamiento, Mision mision) {
+        super(autonomia, procesamiento, mision);
+    }
+
+    public DronSeguridad(Double autonomia, Integer procesamiento) {
+        super(autonomia, procesamiento);
+    }
+
+    @Override
+    protected Boolean esAvanzadoSegunTipo() {
+        return this.getProcesamiento() > 50;
+    }
+    
 }
