@@ -2,16 +2,18 @@ package me.gonzager.ex.operaciones.drones;
 
 public class DronComercial extends Dron{
 
-    public DronComercial(Double autonomia, Integer procesamiento) {
+
+    public DronComercial(Integer autonomia, Integer procesamiento) {
         super(autonomia, procesamiento);
-    }
-    public DronComercial(Double autonomia, Integer procesamiento, Mision mision) {
-        super(autonomia, procesamiento, mision);
     }
 
     @Override
-    protected Boolean esAvanzadoSegunTipo() {
-        return false;
+    public Integer eficienciaOperativa() {
+        return super.eficienciaOperativa() + 15;
     }
 
+    @Override
+    public Boolean esDronAvanzado() {
+        return false;
+    }
 }
